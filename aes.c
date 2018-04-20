@@ -59,7 +59,8 @@ void E(B *s){
       w=R(w,8)^c;F(4)w=k[i]^=w;
 
       // if round 11, stop; update c
-      if(c==108)break;c=M(c);
+      if(c==108)break; 
+      c=M(c);
 
       // SubBytes and ShiftRows
       F(16)((B*)x)[(i%4)+(((i/4)-(i%4))%4)*4]=S(s[i]);
