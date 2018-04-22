@@ -94,8 +94,8 @@ void encrypt(W l, B*c, B*p, B*k){
       l-=r;p+=r;
       
       // update counter
-      for(i=15;i>=0;i--)
-        if(++c[i])break;
+      for(i=16;i>0;i--)
+        if(++c[i-1])break;
     }
 }
 #endif
