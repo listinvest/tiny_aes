@@ -55,17 +55,18 @@ void E(B *s){
       // AddRoundKey, 1st part of ExpandRoundKey
       w=k[3];F(4)w=(w&-256)|S(w),w=R(w,8),((W*)s)[i]=x[i]^k[i];
 
-      // 2nd part of ExpandRoundKey
+      // AddRoundConstant, perform 2nd part of ExpandRoundKey
       w=R(w,8)^c;F(4)w=k[i]^=w;
 
-      // if round 11, stop; update c
+      // if round 11, stop; 
       if(c==108)break; 
+      // update c
       c=M(c);
 
       // SubBytes and ShiftRows
       F(16)((B*)x)[(i%4)+(((i/4)-(i%4))%4)*4]=S(s[i]);
 
-      // if not round 10, MixColumns
+      // if not round 11, MixColumns
       if(c!=108)F(4)w=x[i],x[i]=R(w,8)^R(w,16)^R(w,24)^M(R(w,8)^w);
     }
 }
