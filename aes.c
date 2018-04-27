@@ -67,7 +67,8 @@ void E(B *s){
       F(16)((B*)x)[(i%4)+(((i/4)-(i%4))%4)*4]=S(s[i]);
 
       // if not round 11, MixColumns
-      if(c!=108)F(4)w=x[i],x[i]=R(w,8)^R(w,16)^R(w,24)^M(R(w,8)^w);
+      if(c!=108)
+        F(4)w=x[i],x[i]=R(w,8)^R(w,16)^R(w,24)^M(R(w,8)^w);
     }
 }
 
