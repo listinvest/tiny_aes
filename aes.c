@@ -30,7 +30,7 @@
 #define R(v,n)(((v)>>(n))|((v)<<(32-(n))))
 #define F(n)for(i=0;i<n;i++)
 typedef unsigned char B;
-typedef unsigned W;
+typedef unsigned int W;
 // Multiplication over GF(2**8)
 W M(W x){
     W t=x&0x80808080;
