@@ -40,11 +40,13 @@
 
     %ifndef BIN
       global _E
+      global E
     %endif
 ; *****************************
 ; void E(void *s);
 ; *****************************
 _E:
+E:
     pushad
     xor    ecx, ecx           ; ecx = 0
     mul    ecx                ; eax = 0, edx = 0
